@@ -1,6 +1,6 @@
 import pygame
 import pygame_textinput
-#import Sql
+import Sql
 from Paddle import Paddle
 from ball import Ball
 from brick import Brick
@@ -105,7 +105,7 @@ while carryOn:
         if event.type == pygame.QUIT:  # Clicked close
             carryOn = False  # Exit loop
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_x: # press x to exit
+            if event.key == pygame.K_x:  # press x to exit
                 carryOn = False
     # paddle move
     keys = pygame.key.get_pressed()
