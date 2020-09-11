@@ -12,7 +12,7 @@ class Brick(pygame.sprite.Sprite):
         self.image.fill(Black)
         self.image.set_colorkey(Black)
 
-        #draw brick
+        # draw brick
         pygame.draw.rect(self.image, color, [0, 0, width, height])
 
         self.rect = self.image.get_rect()

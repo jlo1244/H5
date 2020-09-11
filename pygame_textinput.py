@@ -59,7 +59,7 @@ class TextInput:
 
         # Vars to make keydowns repeat after user pressed a key for some time:
         self.keyrepeat_counters = {}  # {event.key: (counter_int, event.unicode)} (look for "***")
-        self.keyrepeat_intial_interval_ms = repeat_keys_initial_ms
+        self.keyrepeat_initial_interval_ms = repeat_keys_initial_ms
         self.keyrepeat_interval_ms = repeat_keys_interval_ms
 
         # Things cursor:
@@ -131,9 +131,9 @@ class TextInput:
             self.keyrepeat_counters[key][0] += self.clock.get_time()  # Update clock
 
             # Generate new key events if enough time has passed:
-            if self.keyrepeat_counters[key][0] >= self.keyrepeat_intial_interval_ms:
+            if self.keyrepeat_counters[key][0] >= self.keyrepeat_initial_interval_ms:
                 self.keyrepeat_counters[key][0] = (
-                    self.keyrepeat_intial_interval_ms
+                    self.keyrepeat_initial_interval_ms
                     - self.keyrepeat_interval_ms
                 )
 
@@ -177,7 +177,6 @@ class TextInput:
     def clear_text(self):
         self.input_string = ""
         self.cursor_position = 0
-
 
 
 if __name__ == "__main__":
