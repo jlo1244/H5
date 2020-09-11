@@ -28,7 +28,7 @@ def submitScore():
     text = font.render("Input name", 1, Black)
     while True:
         screen.fill((225, 225, 225))
-        screen.blit(text, (200, 300))
+        screen.blit(text, (275, 250))
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
@@ -39,7 +39,7 @@ def submitScore():
             uname = textinput.get_text()
             break
         # Blit its surface onto the screen
-        screen.blit(textinput.get_surface(), (250, 300))
+        screen.blit(textinput.get_surface(), (350, 350))
 
         pygame.display.update()
 
