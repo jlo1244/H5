@@ -49,4 +49,3 @@ class Shot(Ball):
 
         # fetch shot
         self.rect = self.image.get_rect()
-

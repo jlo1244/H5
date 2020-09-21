@@ -1,6 +1,7 @@
 import pygame
 
 Black = (0, 0, 0)
+# brick block
 
 
 class Brick(pygame.sprite.Sprite):
