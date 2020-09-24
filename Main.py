@@ -2,9 +2,9 @@ import pygame
 import pygame_textinput
 import Sql
 from Paddle import Paddle
-from ball import Ball
-from brick import Brick
-from ball import Shot
+from Ball import Ball
+from Brick import Brick
+from Ball import Shot
 
 pygame.init()
 

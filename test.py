@@ -10,9 +10,15 @@ class MyTestCase(unittest.TestCase):
         Sql.cursor.execute('''select uname from test where uname like 'test' ''')
         Sql.cursor.commit
         user = Sql.cursor.fetchone()
-        self.assertEqual(user.uname, "test")
-        Sql.delete('test', 3)
-    # should have worked no idea why not
+        self.assertEqual(user.uname, 'test')
+        Sql.cursor.execute('''select id from test where uname like 'test' ''')
+        Sql.cursor.commit
+        rid = Sql.cursor.fetchone()
+        Sql.delete('test', rid.id)
+        Sql.cursor.execute('''select uname from test where uname like 'test' ''')
+        Sql.cursor.commit
+        testing = Sql.cursor.fetchone()
+        self.assertIsNone(testing)
 
 
 if __name__ == '__main__':
